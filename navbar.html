@@ -1,0 +1,244 @@
+<style>
+    :root {
+        /* MoveO RGB Palette */
+        --primary-rgb: rgb(255, 168, 36);      /* Amber */
+        --secondary-rgb: rgb(26, 115, 169);    /* Blue */
+        --secondary-dark-rgb: rgb(18, 84, 124);
+        --white-rgb: rgb(255, 255, 255);
+        --nav-height: 90px;
+        --transition-pro: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    .moveo-nav-wrapper {
+        position: sticky;
+        top: 0;
+        z-index: 9999;
+        width: 100%;
+        font-family: 'Segoe UI', system-ui, sans-serif;
+    }
+
+    .moveo-navbar {
+        background-color: var(--secondary-rgb);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        height: var(--nav-height);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 5%;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Logo & Brand */
+    .nav-brand-box {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        transition: var(--transition-pro);
+    }
+
+    .nav-brand-box:hover { transform: scale(1.02); }
+
+    .nav-logo-main {
+        height: 55px;
+        width: auto;
+        object-fit: contain;
+    }
+
+    /* Main Navigation Links */
+    .nav-list {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        gap: 25px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-link-item {
+        color: var(--white-rgb);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 10px 0;
+        position: relative;
+        transition: var(--transition-pro);
+        opacity: 0.85;
+    }
+
+    /* Advanced Hover Effect */
+    .nav-link-item::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background: var(--primary-rgb);
+        transition: var(--transition-pro);
+    }
+
+    .nav-link-item:hover {
+        opacity: 1;
+        color: var(--primary-rgb);
+    }
+
+    .nav-link-item:hover::after { width: 100%; }
+
+    /* Action Buttons Container */
+    .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    /* Pro Download Button with Pulse */
+    .btn-download {
+        background: transparent;
+        color: var(--white-rgb);
+        border: 2px solid var(--white-rgb);
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 13px;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: var(--transition-pro);
+        animation: pulseShadow 2s infinite;
+    }
+
+    @keyframes pulseShadow {
+        0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
+        70% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+    }
+
+    .btn-download:hover {
+        background: var(--white-rgb);
+        color: var(--secondary-rgb);
+        transform: translateY(-2px);
+    }
+
+    /* Book Now - High Level CTA */
+    .btn-book-now {
+        background: var(--primary-rgb);
+        color: var(--white-rgb);
+        padding: 12px 28px;
+        border-radius: 8px;
+        font-weight: 800;
+        text-decoration: none;
+        text-transform: uppercase;
+        box-shadow: 0 5px 15px rgba(255, 168, 36, 0.4);
+        transition: var(--transition-pro);
+    }
+
+    .btn-book-now:hover {
+        background: var(--white-rgb);
+        color: var(--secondary-rgb);
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Mobile Interaction */
+    .mobile-nav-toggle {
+        display: none;
+        cursor: pointer;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 12px;
+        border-radius: 10px;
+    }
+
+    .mobile-nav-toggle span {
+        display: block;
+        width: 25px;
+        height: 2px;
+        background: var(--white-rgb);
+        margin: 6px 0;
+        transition: var(--transition-pro);
+    }
+
+    @media (max-width: 1100px) {
+        .mobile-nav-toggle { display: block; }
+        
+        .nav-list {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 300px;
+            height: 100vh;
+            background: var(--secondary-dark-rgb);
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px;
+            transition: 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+            box-shadow: -15px 0 50px rgba(0,0,0,0.5);
+        }
+
+        .nav-list.active { right: 0; }
+        
+        .nav-link-item { font-size: 20px; }
+        .nav-actions { flex-direction: column; width: 100%; margin-top: 30px; }
+        .btn-download, .btn-book-now { width: 100%; text-align: center; }
+
+        .mobile-nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translateY(11px); }
+        .mobile-nav-toggle.active span:nth-child(2) { opacity: 0; }
+        .mobile-nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translateY(-11px); }
+    }
+</style>
+
+<div class="moveo-nav-wrapper">
+    <nav class="moveo-navbar">
+        <a href="index.html" class="nav-brand-box">
+            <img src="Favicon/logo.png" alt="MoveO App" class="nav-logo-main">
+            
+        </a>
+
+        <ul class="nav-list" id="navMenu">
+            <li><a href="index.html" class="nav-link-item">Home</a></li>
+            <li><a href="services.html" class="nav-link-item">Services</a></li>
+            <li><a href="about.html" class="nav-link-item">About Us</a></li>
+            <li><a href="blog.html" class="nav-link-item">Blog</a></li>
+            <li><a href="contact.html" class="nav-link-item">Contact Us</a></li>
+            
+            <div class="nav-actions mobile-only">
+                <a href="https://play.google.com/store/apps/details?id=com.moveo.app&hl=en_IN" class="btn-download" download>Download App</a>
+                
+            </div>
+        </ul>
+
+        <div class="mobile-nav-toggle" id="menuToggle" onclick="handleToggles()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+</div>
+
+<script>
+    function handleToggles() {
+        const menu = document.getElementById('navMenu');
+        const trigger = document.getElementById('menuToggle');
+        
+        menu.classList.toggle('active');
+        trigger.classList.toggle('active');
+
+        // Professional body lock
+        if(menu.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    }
+
+    // Auto-close on click outside
+    window.onclick = function(event) {
+        const menu = document.getElementById('navMenu');
+        const trigger = document.getElementById('menuToggle');
+        if (menu.classList.contains('active') && !menu.contains(event.target) && !trigger.contains(event.target)) {
+            handleToggle();
+        }
+    }
+</script>

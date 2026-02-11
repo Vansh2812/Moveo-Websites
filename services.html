@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoveO Services - Specialized Vehicle Fleet</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: rgb(255, 168, 36);      /* Amber */
+            --secondary: rgb(26, 115, 169);    /* Blue */
+            --app-gradient: linear-gradient(180deg, #FFF1D1 0%, #FFFFFF 100%);
+            --background: #F8F9FA;
+            --white: #FFFFFF;
+            --transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        body { 
+            margin: 0; 
+            font-family: 'Segoe UI', system-ui, sans-serif; 
+            background-color: var(--background); 
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* --- Page Header --- */
+        .services-header {
+            padding: 100px 8% 60px;
+            background: var(--app-gradient);
+            text-align: center;
+        }
+        .services-header h1 { font-size: 3.5rem; color: var(--secondary); font-weight: 800; margin-bottom: 15px; }
+        .services-header p { font-size: 1.2rem; max-width: 800px; margin: 0 auto; opacity: 0.8; }
+
+        /* --- Services Grid --- */
+        .fleet-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .fleet-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border-bottom: 5px solid transparent;
+        }
+
+        .fleet-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+            border-bottom-color: var(--primary);
+        }
+
+        .fleet-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-bottom: 1px solid #eee;
+        }
+
+        .fleet-info {
+            padding: 35px;
+        }
+
+        .fleet-info h2 {
+            color: var(--secondary);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .fleet-info p {
+            color: #666;
+            font-size: 1.05rem;
+            margin-bottom: 25px;
+        }
+
+        .spec-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+        .spec-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #444;
+        }
+
+        .spec-list i {
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        .book-btn {
+            background: var(--secondary);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            display: block;
+            text-align: center;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        .book-btn:hover {
+            background: var(--primary);
+            transform: scale(1.02);
+        }
+
+        @media (max-width: 768px) {
+            .services-header h1 { font-size: 2.5rem; }
+            .fleet-container { padding: 40px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="navbar-placeholder"></div>
+
+    <header class="services-header">
+        <h1>Our Specialized Fleet</h1>
+        <p>From local parcel delivery to interstate heavy haulage, we have the right vehicle for your cargo needs.</p>
+    </header>
+
+    <main class="fleet-container">
+        <div class="fleet-card">
+            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1000&auto=format&fit=crop" class="fleet-img" alt="Bikes & Autos">
+            <div class="fleet-info">
+                <h2>Local Express</h2>
+                <p>Perfect for small parcels and documents requiring quick movement within city limits.</p>
+                <ul class="spec-list">
+                    <li><i class="fas fa-check-circle"></i> Bikes & Autos</li>
+                    <li><i class="fas fa-check-circle"></i> Capacity: Up to 500kg</li>
+                    <li><i class="fas fa-check-circle"></i> Intra-city delivery</li>
+                </ul>
+                <a href="contact.html" class="book-btn">Book Local</a>
+            </div>
+        </div>
+
+        <div class="fleet-card">
+            <img src="https://images.unsplash.com/photo-1580674684081-7617fbf3d745?auto=format&fit=crop&w=600" class="fleet-img" alt="Pickup Trucks">
+            <div class="fleet-info">
+                <h2>Inter-City Haulage</h2>
+                <p>Reliable pickup trucks and vans designed for furniture and medium-sized industrial goods.</p>
+                <ul class="spec-list">
+                    <li><i class="fas fa-check-circle"></i> Cars & Pickup Trucks</li>
+                    <li><i class="fas fa-check-circle"></i> Capacity: 1 - 5 Tons</li>
+                    <li><i class="fas fa-check-circle"></i> Inter-city logistics</li>
+                </ul>
+                <a href="contact.html" class="book-btn">Book Inter-City</a>
+            </div>
+        </div>
+
+        <div class="fleet-card">
+            <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=600" class="fleet-img" alt="Heavy Trucks">
+            <div class="fleet-info">
+                <h2>Heavy Logistics</h2>
+                <p>Specialized large trucks for interstate oversized goods, containers, and machinery.</p>
+                <ul class="spec-list">
+                    <li><i class="fas fa-check-circle"></i> Large Transport Vehicles</li>
+                    <li><i class="fas fa-check-circle"></i> Capacity: 10+ Tons</li>
+                    <li><i class="fas fa-check-circle"></i> Interstate reach</li>
+                </ul>
+                <a href="contact.html" class="book-btn">Request Quote</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // High-Level Component Loader
+        async function loadComp(id, file) {
+            try {
+                const response = await fetch(file);
+                const text = await response.text();
+                document.getElementById(id).innerHTML = text;
+                if (id === 'navbar-placeholder') initNavbarLogic();
+            } catch (err) { console.error('Error:', err); }
+        }
+
+        loadComp('navbar-placeholder', 'navbar.html');
+        loadComp('footer-placeholder', 'footer.html');
+
+        function initNavbarLogic() {
+            const trigger = document.getElementById('menuToggle');
+            const menu = document.getElementById('navMenu');
+            if (trigger && menu) {
+                trigger.addEventListener('click', () => {
+                    menu.classList.toggle('active');
+                    trigger.classList.toggle('active');
+                    document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : 'auto';
+                });
+            }
+        }
+    </script>
+</body>
+</html>

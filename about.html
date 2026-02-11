@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoveO - About Our Logistics Vision</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Application Brand Identity */
+            --primary-rgb: rgb(255, 168, 36);      /* Amber */
+            --secondary-rgb: rgb(26, 115, 169);    /* Blue */
+            --app-gradient: linear-gradient(180deg, #FFF1D1 0%, #FFFFFF 100%); /* Matched to App Sign-In */
+            --background: #F8F9FA;
+            --white: #FFFFFF;
+            --black: #000000;
+            --transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        body { 
+            margin: 0; 
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
+            background-color: var(--background); 
+            color: var(--black); 
+            overflow-x: hidden;
+            line-height: 1.8;
+        }
+
+        /* --- Animations --- */
+        .reveal { opacity: 0; transform: translateY(40px); transition: var(--transition); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* --- Page Header --- */
+        .about-header {
+            height: 40vh;
+            background: linear-gradient(rgba(26, 115, 169, 0.85), rgba(26, 115, 169, 0.85)), 
+                        url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1600&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .about-header h1 { 
+            font-size: clamp(2.5rem, 5vw, 4rem); 
+            font-weight: 800; 
+            margin: 0; 
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* --- Section 1: Introduction --- */
+        .intro-section {
+            padding: 100px 10%;
+            background: var(--app-gradient);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 60px;
+            align-items: center;
+        }
+
+        .intro-text h2 {
+            color: var(--secondary-rgb);
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            font-weight: 800;
+            position: relative;
+        }
+
+        .intro-text h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 5px;
+            background: var(--primary-rgb);
+        }
+
+        .intro-text p {
+            font-size: 1.15rem;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .intro-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        /* --- Section 2: Mission & Vision --- */
+        .mv-section {
+            padding: 100px 10%;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .mv-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .mv-card {
+            padding: 50px 40px;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border-top: 5px solid var(--secondary-rgb);
+        }
+
+        .mv-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+            border-top-color: var(--primary-rgb);
+        }
+
+        .mv-card i {
+            font-size: 3rem;
+            color: var(--primary-rgb);
+            margin-bottom: 25px;
+        }
+
+        .mv-card h3 {
+            font-size: 1.8rem;
+            color: var(--secondary-rgb);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .mv-card p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .intro-section { padding: 60px 5%; text-align: center; }
+            .intro-text h2::after { left: 50%; transform: translateX(-50%); }
+            .mv-section { padding: 60px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="navbar-placeholder"></div>
+
+    <main>
+        <header class="about-header">
+            <div class="reveal">
+                <h1>Our Journey</h1>
+                <p style="opacity: 0.9; font-size: 1.2rem; margin-top: 10px;">The Engine Driving Logistics Forward</p>
+            </div>
+        </header>
+
+        <section class="intro-section">
+            <div class="intro-text reveal">
+                <h2>Redefining Movement</h2>
+                <p>MoveO is a specialized business-focused logistics platform designed to bridge the gap between heavy cargo requirements and available transport. Based in Himatnagar, Gujarat, we have built a robust ecosystem that connects customers with professional drivers operating a diverse fleet of bikes, autos, pickup vehicles, and massive interstate transport trucks.</p>
+                <p>Our platform handles the complexity of movement so you can focus on growth. From small city parcels to industrial heavy haulage across state borders, MoveO ensures precision, safety, and real-time reliability through our dedicated mobile application and experienced logistical network.</p>
+            </div>
+            <div class="intro-image reveal">
+                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1000&auto=format&fit=crop" alt="MoveO Fleet">
+            </div>
+        </section>
+
+        <section class="mv-section">
+            <div style="text-align: center;">
+                <h2 style="color: var(--secondary-rgb); font-size: 2.5rem; font-weight: 800;">Our Purpose</h2>
+                <div style="width: 80px; height: 4px; background: var(--primary-rgb); margin: 15px auto;"></div>
+            </div>
+            
+            <div class="mv-grid">
+                <div class="mv-card reveal">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Our Mission</h3>
+                    <p>To connect customers and professional drivers through a seamless, tech-driven interface that ensures efficient, safe, and transparent transport for every type of cargo.</p>
+                </div>
+                <div class="mv-card reveal">
+                    <i class="fas fa-eye"></i>
+                    <h3>Our Vision</h3>
+                    <p>To become India's primary logistics engine, setting the global standard for business-focused movement through innovation, fleet diversity, and unwavering reliability.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+    // 1. Elite Component Loader with Navbar Logic Initialization
+    async function loadComp(id, file) {
+        try {
+            const response = await fetch(file);
+            const text = await response.text();
+            document.getElementById(id).innerHTML = text;
+
+            // Initialize navbar logic only after the navbar is successfully loaded
+            if (id === 'navbar-placeholder') {
+                initNavbarLogic();
+            }
+        } catch (err) {
+            console.error('Error loading component:', err);
+        }
+    }
+
+    // Load components
+    loadComp('navbar-placeholder', 'navbar.html');
+    loadComp('footer-placeholder', 'footer.html');
+
+    // 2. High-Level Navbar Logic (Fixes the Reference Error)
+    function initNavbarLogic() {
+        const trigger = document.getElementById('menuToggle');
+        const menu = document.getElementById('navMenu');
+
+        if (trigger && menu) {
+            // Remove the need for onclick="" in the HTML
+            trigger.addEventListener('click', () => {
+                menu.classList.toggle('active');
+                trigger.classList.toggle('active');
+
+                // Toggle body scroll for professional mobile experience
+                if (menu.classList.contains('active')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
+    }
+
+    // 3. Scroll Reveal Animation Logic
+    function reveal() {
+        const reveals = document.querySelectorAll('.reveal');
+        reveals.forEach(el => {
+            const windowHeight = window.innerHeight;
+            const elementTop = el.getBoundingClientRect().top;
+            if (elementTop < windowHeight - 100) {
+                el.classList.add('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', reveal);
+    reveal(); // Initial check on page load
+</script>
+
+</body>
+</html>
