@@ -5,90 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MoveO Blog - Logistics Insights</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --primary: #FFA824;      /* App Amber */
-            --secondary: #1A73A9;    /* Logistics Blue */
-            --app-gradient: linear-gradient(180deg, #FFF1D1 0%, #FFFFFF 100%);
-            --white: #FFFFFF;
-            --background: #F8F9FA;
-            --transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-        }
+    <link rel="stylesheet" href="/moveo-website/styles/styles.css">
 
-        body { 
-            margin: 0; 
-            font-family: 'Segoe UI', system-ui, sans-serif; 
-            background-color: var(--background); 
-            line-height: 1.6;
-        }
-
-        /* Hero matched to App Gradient */
-        .blog-header {
-            padding: 120px 8% 80px;
-            background: var(--app-gradient);
-            text-align: center;
-        }
-
-        .blog-header h1 { font-size: 3.5rem; color: var(--secondary); font-weight: 800; margin-bottom: 15px; }
-        .blog-header p { font-size: 1.2rem; color: #555; max-width: 700px; margin: 0 auto; }
-
-        /* Grid System */
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            padding: 80px 8%;
-        }
-
-        .blog-card {
-            background: var(--white);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .blog-card:hover { transform: translateY(-15px); box-shadow: 0 25px 50px rgba(0,0,0,0.1); }
-
-        .blog-img { height: 230px; width: 100%; object-fit: cover; }
-        
-        .blog-info { padding: 30px; flex-grow: 1; }
-        .blog-date { font-size: 0.9rem; color: var(--primary); font-weight: 700; text-transform: uppercase; margin-bottom: 10px; display: block; }
-        .blog-info h3 { color: var(--secondary); font-size: 1.5rem; margin-bottom: 15px; line-height: 1.3; }
-        .blog-info p { color: #666; font-size: 1rem; margin-bottom: 25px; }
-
-        .read-btn {
-            background: var(--secondary);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
-            display: inline-block;
-            transition: 0.3s;
-        }
-
-        .read-btn:hover { background: var(--primary); transform: scale(1.05); }
-
-        /* Pagination Module */
-        .pagination { text-align: center; padding-bottom: 80px; }
-        .load-more {
-            background: transparent;
-            border: 2px solid var(--secondary);
-            color: var(--secondary);
-            padding: 15px 40px;
-            border-radius: 50px;
-            font-weight: 800;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .load-more:hover { background: var(--secondary); color: white; }
-
-        @media (max-width: 768px) { .blog-header h1 { font-size: 2.5rem; } .blog-grid { padding: 40px 5%; } }
-    </style>
 </head>
 <body>
 
@@ -136,31 +54,6 @@
     </div>
 
     <div id="footer-placeholder"></div>
-
-    <script>
-        async function loadComp(id, file) {
-            try {
-                const response = await fetch(file);
-                const text = await response.text();
-                document.getElementById(id).innerHTML = text;
-                if (id === 'navbar-placeholder') initNavbarLogic();
-            } catch (err) { console.error('Error:', err); }
-        }
-
-        loadComp('navbar-placeholder', 'navbar.html');
-        loadComp('footer-placeholder', 'footer.html');
-
-        function initNavbarLogic() {
-            const trigger = document.getElementById('menuToggle');
-            const menu = document.getElementById('navMenu');
-            if (trigger && menu) {
-                trigger.addEventListener('click', () => {
-                    menu.classList.toggle('active');
-                    trigger.classList.toggle('active');
-                    document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : 'auto';
-                });
-            }
-        }
-    </script>
+<script src="/moveo-website/scripts/script.js"></script>
 </body>
 </html>

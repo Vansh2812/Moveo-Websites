@@ -1,161 +1,13 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<style>
-    :root {
-        --primary-rgb: rgb(255, 168, 36);      /* Amber */
-        --secondary-rgb: rgb(26, 115, 169);    /* Blue */
-        --secondary-dark-rgb: rgb(18, 84, 124);
-        --text-muted: rgba(255, 255, 255, 0.7);
-        --white: #FFFFFF;
-        --transition: all 0.3s ease;
-    }
-
-    .moveo-footer {
-        background-color: var(--secondary-rgb);
-        color: var(--white);
-        padding: 80px 6% 30px;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        border-top: 4px solid var(--primary-rgb);
-    }
-
-    .footer-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 40px;
-        margin-bottom: 50px;
-    }
-
-    /* Brand Column */
-    .footer-brand .logo-img {
-        height: 50px;
-        margin-bottom: 20px;
-    }
-
-    .footer-brand p {
-        font-size: 15px;
-        line-height: 1.6;
-        color: var(--text-muted);
-        max-width: 300px;
-    }
-
-    /* Column Headers */
-    .footer-heading {
-        color: var(--primary-rgb);
-        font-size: 18px;
-        font-weight: 700;
-        margin-bottom: 25px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    /* Link Lists */
-    .footer-links {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .footer-links li {
-        margin-bottom: 12px;
-    }
-
-    .footer-links a {
-        color: var(--text-muted);
-        text-decoration: none;
-        transition: var(--transition);
-        font-size: 15px;
-        display: inline-block;
-    }
-
-    .footer-links a:hover {
-        color: var(--primary-rgb);
-        transform: translateX(5px);
-    }
-
-    /* Contact Info */
-    .contact-item {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 15px;
-        color: var(--text-muted);
-        font-size: 14px;
-    }
-
-    .contact-item i {
-        color: var(--primary-rgb);
-        width: 20px;
-    }
-
-    /* Social Icons Module */
-    .social-wrapper {
-        display: flex;
-        gap: 15px;
-        margin-top: 20px;
-    }
-
-    .social-btn {
-        width: 40px;
-        height: 40px;
-        background: rgba(255, 255, 255, 0.1);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 8px;
-        color: var(--white);
-        text-decoration: none;
-        transition: var(--transition);
-        font-size: 18px;
-    }
-
-    .social-btn:hover {
-        background: var(--primary-rgb);
-        transform: translateY(-5px);
-        box-shadow: 0 5px 15px rgba(255, 168, 36, 0.4);
-    }
-
-    /* Bottom Bar */
-    .footer-bottom {
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        padding-top: 30px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    .copyright {
-        font-size: 14px;
-        color: var(--text-muted);
-    }
-
-    .legal-nav {
-        display: flex;
-        gap: 20px;
-    }
-
-    .legal-nav a {
-        color: var(--text-muted);
-        text-decoration: none;
-        font-size: 13px;
-        transition: var(--transition);
-    }
-
-    .legal-nav a:hover {
-        color: var(--white);
-    }
-
-    /* Responsive Adjustments */
-    @media (max-width: 768px) {
-        .moveo-footer { padding: 50px 5% 20px; text-align: center; }
-        .footer-container { gap: 30px; }
-        .social-wrapper { justify-content: center; }
-        .footer-bottom { flex-direction: column; text-align: center; }
-        .footer-links a:hover { transform: none; }
-        .contact-item { justify-content: center; }
-    }
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoveO Footer</title>
+    <link rel="stylesheet" href="/moveo-website/styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
 
 <footer class="moveo-footer">
     <div class="footer-container">
@@ -219,3 +71,6 @@
         </div>
     </div>
 </footer>
+
+</body>
+</html>
